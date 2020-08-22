@@ -1,5 +1,4 @@
-/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
-import { Controller, Get, Post, Param, Body, Put, Patch, Delete, Query } from '@nestjs/common';
+import { Controller, Get, Post, Param, Body, Put, Patch, Delete } from '@nestjs/common';
 
 @Controller('coffees')
 export class CoffeeController {
@@ -19,7 +18,7 @@ export class CoffeeController {
   }
 
   @Put(':id')
-  updateFull(@Param('id') id, @Body() body: string): string {
+  updateFull(@Param('id') id : string, @Body() body: string): string {
     return `We will try to update the coffee #${id} with the data ${body}`;
   }
 
@@ -29,7 +28,7 @@ export class CoffeeController {
   }
 
   @Delete(':id')
-  remove(@Param('id') id): string {
+  remove(@Param('id') id: string): string {
     return `Coffee with id #${id} is been deleted`;
   }
 }
